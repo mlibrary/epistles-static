@@ -1,0 +1,93 @@
+@use 'media';
+// --------------------------------------------------
+//
+// # Layout
+//   Common building blocks for the site.
+//
+// ## Table of Contents
+//   1. Viewport Container
+//   2. Layout
+//   3. Flex
+//
+// --------------------------------------------------
+
+// ************************ //
+// *** 1. CONTAINERS ***** //
+// ***********************//
+
+.container {
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+
+  @include media.breakpoint('xs', 'max-width') {
+    margin: 1.5rem 0;
+  }
+}
+
+.viewport-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+
+// ****************** //
+// *** 2. LAYOUT *** //
+// **************** //
+
+.layout {
+  margin: 0 auto;
+}
+
+// **************** //
+// *** 3. FLEX *** //
+// ***************//
+
+.flex-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: start;
+  align-items: stretch;
+
+  @include media.breakpoint('sm', 'max-width') {
+    gap: 1rem;
+   }
+}
+
+.flex-layout > :first-child {
+  flex-grow: 1;
+  flex-basis: 12rem;
+}
+
+.flex-layout > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 50%;
+}
+
+// 404 Page Layout with Image 
+
+.flex-static {
+  display: flex;
+  flex-wrap: wrap;
+
+  .main-content {
+    width: 50%;
+
+    @include media.breakpoint('sm', 'max-width') {
+      width: 100vw;
+      }
+  }
+}
+
+.image-404-page {
+  width: 50%;
+
+  @include media.breakpoint('sm', 'max-width') {
+   display: none;
+   }
+}

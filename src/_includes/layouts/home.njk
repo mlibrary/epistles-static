@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+
+<div class="flex-layout">
+  <div class="main-content">
+   {% include "partials/banner-hero.njk" %}
+    <div class="viewport-container">
+       {{ content | safe }}
+    </div>
+    <div class="viewport-container">
+      {% include "partials/cards.njk" %}
+    </div>
+  </div>
+</div>
+{% include "partials/banner-feedback.njk" %}

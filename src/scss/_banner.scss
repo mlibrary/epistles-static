@@ -1,0 +1,92 @@
+@use 'media';
+// --------------------------------------------------
+//
+// # Banners
+//   1. Banners (heros) for home and landing pages
+//   Background color, heading, text, and image (if applicable)
+//   2. Banners found above footer
+//   Full width banner containing text feedback form or contact
+// --------------------------------------------------
+
+
+// ************************** //
+// *** 1. Banners - Hero *** //
+// ************************ //
+
+.banner {
+  background-color: var(--color-teal-100);
+}
+
+.banner-container {
+  display: flex;
+} 
+
+.banner-text, .banner-image {
+  width: calc(50% - .5rem);
+}
+
+.banner-image {
+  background-image: url("https://source.unsplash.com/ezJhm4xrHAM/1600x900");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include media.breakpoint('sm', 'max-width') {
+    display: none;
+  }
+}
+
+.banner-text {
+  padding: 2rem 0;
+
+  .breadcrumbs {
+    padding: 0 0 1.5rem;
+  }
+
+  h1 {
+   max-width: 12ch;
+  }
+  p {
+    max-width: 50ch;
+    font-size: 1.125rem;
+  }
+
+  @include media.breakpoint('sm', 'max-width') {
+    width: 100%;
+  }
+}
+
+.banner-text.landing h1 {
+  max-width: 20ch;
+}
+
+.banner-text.landing {
+  width: 60%;
+
+  @include media.breakpoint('sm', 'max-width') {
+    width: 100%;
+  }
+}
+
+// ******************************************** //
+// *** 2. Banners for Feedback and Contact *** //
+// ****************************************** //
+
+.feedback-banner {
+  background-color: var(--color-indigo-100);
+  padding: 1em 0;
+  
+  a {
+    font-weight: bold;
+  }
+}
+
+.feedback-banner-container {
+  display: flex;
+  align-items: center;
+}
+
+.feedback-icon, .contact-icon {
+  border-radius: 100%;
+  margin-right: .5rem;
+  color: var(--color-teal-400);
+}

@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+
+<div class="viewport-container">
+  {% include "partials/breadcrumbs.njk" %}
+  <div class="flex-layout container">
+    <aside class="page-aside">
+      {% include "partials/side-nav.njk" %}
+    </aside>
+    <div class="main-content">
+      <div class="prose">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>
+</div>  
